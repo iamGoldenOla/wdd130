@@ -1,0 +1,90 @@
+/*Riverborn Wild – Site Styles */
+
+/*Color & Typography Variables */
+:root {
+    --primary-color:  #191C58;          /* Oxford Blue */
+    --secondary-color:#0451A1;          /* Royal Blue  */
+    --accent1-color:  #FFFFFF;          /* White       */
+    --accent2-color:  #FF8F00;          /* Amber / Orange */
+
+    --heading-font: "Poppins", sans-serif;
+    --body-font:    "Lato",    sans-serif;
+}
+
+/* Global Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--primary-color);      /* dark text by default */
+    background-color: var(--accent1-color);
+    line-height: 1.5;
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 840px;                 /* keeps content readable on large screens */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+}
+
+nav, 
+p, 
+section, 
+article {
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* Hero Banner */
+.hero {
+    position: relative;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    opacity: 0.8;
+}
+
+/*Content */
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+.about-intro img {
+    float: right;
+    width: 125px;
+    margin-left: 1rem;
+}
