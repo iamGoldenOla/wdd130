@@ -50,6 +50,14 @@ article {
 
 .socialmedia a {
     text-decoration: none;
+   
+}
+
+/*size all the icons */
+.socialmedia a img {
+  width: 32px;       
+  height: 32px;          
+  object-fit: contain;  
 }
 
 /* Hero Banner */
