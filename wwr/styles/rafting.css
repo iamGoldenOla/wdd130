@@ -201,3 +201,8 @@ footer p { margin: 0; }
     header nav ul.main-menu { justify-content: center; flex-wrap: wrap; }
     .hero h1 { font-size: 1.8rem; }
 }
+
+/* optional gap between header and hero */
+header {                /* option A */
+    margin-bottom: 1.25rem;   /* tweak value to taste */
+}
