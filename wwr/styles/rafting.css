@@ -1,6 +1,6 @@
 /*Riverborn Wild – Site Styles*/
 
-/*  Color & Typography Variables ‒‒‒*/
+/*‒‒‒Color & Typography Variables‒‒‒*/
 :root {
     --primary-color:  #191C58;          /* Oxford Blue */
     --secondary-color:#0451A1;          /* Royal Blue  */
@@ -11,7 +11,7 @@
     --body-font:    "Lato",    sans-serif;
 }
 
-/*‒‒‒ Global Reset & Base ‒‒‒*/
+/*‒‒‒Reset & Base‒‒‒*/
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@
 
 body {
     font-family: var(--body-font);
-    color: var(--primary-color);          /* dark text by default */
+    color: var(--primary-color);
     background-color: var(--accent1-color);
     line-height: 1.5;
 }
@@ -29,32 +29,39 @@ header,
 main,
 footer {
     width: 100%;
-    max-width: 840px;                     /* keeps content readable on large screens */
+    max-width: 840px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/*HEADER  (Grid container + Flex nav)*/
+/*HEADER  (Grid layout and Flex nav)*/
 header {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--accent1-color);
-    display: grid;                        /* two columns: logo | nav */
-    grid-template-columns: auto 1fr;
+    display: grid;
+    grid-template-columns: auto 1fr auto;   /* logo,title, nav */
     align-items: center;
     gap: 1rem;
 }
 
-/* optional narrower logo styling */
-header img {
-    width: 90px;
+/* logo */
+header img { width: 90px; }
+
+/* site title */
+.site-title {
+    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    color: var(--accent1-color);
+    text-align: center;
 }
 
-/* horizontal nav menu (flex) */
-header nav {
+/* nav list becomes flex row */
+header nav ul.main-menu {
+    list-style: none;
     display: flex;
     gap: 1rem;
-    justify-content: flex-end;
-    flex-wrap: wrap;                      /* wraps on small screens */
+    margin: 0;
+    padding: 0;
 }
 
 header nav a {
@@ -68,10 +75,15 @@ header nav a {
 
 header nav a:hover,
 header nav a:focus {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-/*GENERAL TYPE & SPACING*/
+/* mark current page */
+header nav a[aria-current="page"] {
+    text-decoration: underline;
+}
+
+/*GLOBAL TYPE / SPACING HELPERS*/
 nav, p, section, article {
     margin: 1rem;
     padding: 0.5rem;
@@ -82,17 +94,17 @@ h1, h2 {
     color: var(--primary-color);
 }
 
-/*SOCIAL MEDIA ICONS*/
+/*SOCIAL ICONS*/
 .socialmedia a { text-decoration: none; }
 
-.socialmedia a img {
+.socialmedia img {
     width: 32px;
     height: 32px;
     object-fit: contain;
     filter: grayscale(100%);
     transition: filter 0.2s ease;
 }
-.socialmedia a img:hover { filter: grayscale(0%); }
+.socialmedia img:hover { filter: grayscale(0%); }
 
 /*HERO BANNER*/
 .hero { position: relative; }
@@ -114,14 +126,13 @@ h1, h2 {
     text-shadow: 0 0 6px rgba(0,0,0,.6);
 }
 
-/*ABOUT INTRO  (float image retained)*/
+/*ABOUT INTRO (float image)*/
 .about-intro img {
-    float: left;                     /* left or right – either passes */
-    width: 280px;                    /* ~40 % of 840 px; adjust to taste */
+    float: left;
+    width: 280px;
     margin: 0 1.25rem 1rem 0;
 }
-
-.about-intro::after {               /* clearfix so float doesn’t collapse */
+.about-intro::after {
     content: "";
     display: block;
     clear: both;
@@ -135,7 +146,7 @@ h1, h2 {
 
 .history-grid {
     display: grid;
-    grid-template-columns: 1fr 220px 1fr;  /* text | image | text */
+    grid-template-columns: 1fr 220px 1fr;
     gap: 1rem;
     align-items: center;
 }
@@ -146,7 +157,7 @@ h1, h2 {
     border-radius: 4px;
 }
 
-/*ADVENTURE GALLERY  (auto-fill grid)*/
+/*ADVENTURE GALLERY (auto-fit grid)*/
 .gallery { border: 1px solid #ccc; }
 
 .adventure-grid {
@@ -164,16 +175,15 @@ h1, h2 {
     border: 3px solid var(--secondary-color);
     border-radius: 4px;
 }
-
 .adventure-grid figcaption {
     margin-top: 0.35rem;
     font-size: 0.875rem;
     color: var(--primary-color);
 }
 
-/*FOOTER  (Flex: text left, icons right)*/
+/*FOOTER (Flex layout)*/
 footer {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--accent1-color);
     display: flex;
     justify-content: space-between;
@@ -187,6 +197,7 @@ footer p { margin: 0; }
 /*RESPONSIVE TWEAKS*/
 @media (max-width: 600px) {
     header { grid-template-columns: 1fr; text-align: center; }
-    header nav { justify-content: center; }
+    .site-title { margin-bottom: 0.25rem; }
+    header nav ul.main-menu { justify-content: center; flex-wrap: wrap; }
     .hero h1 { font-size: 1.8rem; }
 }
