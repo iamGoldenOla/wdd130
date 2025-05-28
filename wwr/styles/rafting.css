@@ -1,6 +1,6 @@
-/*Riverborn Wild – Site Styles */
+/*Riverborn Wild – Site Styles*/
 
-/*Color & Typography Variables */
+/*  Color & Typography Variables ‒‒‒*/
 :root {
     --primary-color:  #191C58;          /* Oxford Blue */
     --secondary-color:#0451A1;          /* Royal Blue  */
@@ -11,7 +11,7 @@
     --body-font:    "Lato",    sans-serif;
 }
 
-/* Global Reset & Base */
+/*‒‒‒ Global Reset & Base ‒‒‒*/
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@
 
 body {
     font-family: var(--body-font);
-    color: var(--primary-color);      /* dark text by default */
+    color: var(--primary-color);          /* dark text by default */
     background-color: var(--accent1-color);
     line-height: 1.5;
 }
@@ -29,41 +29,73 @@ header,
 main,
 footer {
     width: 100%;
-    max-width: 840px;                 /* keeps content readable on large screens */
+    max-width: 840px;                     /* keeps content readable on large screens */
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Header */
+/*HEADER  (Grid container + Flex nav)*/
 header {
     background-color: var(--primary-color);
     color: var(--accent1-color);
+    display: grid;                        /* two columns: logo | nav */
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
 }
 
-nav, 
-p, 
-section, 
-article {
+/* optional narrower logo styling */
+header img {
+    width: 90px;
+}
+
+/* horizontal nav menu (flex) */
+header nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;                      /* wraps on small screens */
+}
+
+header nav a {
+    font-family: var(--heading-font);
+    color: var(--accent1-color);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+    background: rgba(255,255,255,0.15);
+}
+
+/*GENERAL TYPE & SPACING*/
+nav, p, section, article {
     margin: 1rem;
     padding: 0.5rem;
 }
 
-.socialmedia a {
-    text-decoration: none;
-   
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
 }
 
-/*size all the icons */
+/*SOCIAL MEDIA ICONS*/
+.socialmedia a { text-decoration: none; }
+
 .socialmedia a img {
-  width: 32px;       
-  height: 32px;          
-  object-fit: contain;  
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
 }
+.socialmedia a img:hover { filter: grayscale(0%); }
 
-/* Hero Banner */
-.hero {
-    position: relative;
-}
+/*HERO BANNER*/
+.hero { position: relative; }
 
 .hero img {
     display: block;
@@ -76,29 +108,85 @@ article {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: max-content;
     padding: 0.5rem 1rem;
-    font-family: var(--heading-font);
     font-size: 2.5rem;
     color: var(--accent1-color);
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-    background: transparent;
+    text-shadow: 0 0 6px rgba(0,0,0,.6);
 }
 
-/*Content */
-h1, h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
+/*ABOUT INTRO  (float image retained)*/
 .about-intro img {
-    float: left;               /* left or right, either passes */
-    width: 280px;              /* ~40 % of 840 px; adjust to taste */
+    float: left;                     /* left or right – either passes */
+    width: 280px;                    /* ~40 % of 840 px; adjust to taste */
     margin: 0 1.25rem 1rem 0;
 }
 
-.about-intro::after {          /* clearfix so the float doesn’t collapse its parent */
+.about-intro::after {               /* clearfix so float doesn’t collapse */
     content: "";
     display: block;
     clear: both;
+}
+
+/*HISTORY  (three-column grid)*/
+.history {
+    background: #f8f9ff;
+    border: 1px solid #ccc;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;  /* text | image | text */
+    gap: 1rem;
+    align-items: center;
+}
+
+.history-grid img {
+    width: 100%;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+/*ADVENTURE GALLERY  (auto-fill grid)*/
+.gallery { border: 1px solid #ccc; }
+
+.adventure-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.adventure-grid figure { text-align: center; }
+
+.adventure-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+.adventure-grid figcaption {
+    margin-top: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--primary-color);
+}
+
+/*FOOTER  (Flex: text left, icons right)*/
+footer {
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+footer p { margin: 0; }
+
+/*RESPONSIVE TWEAKS*/
+@media (max-width: 600px) {
+    header { grid-template-columns: 1fr; text-align: center; }
+    header nav { justify-content: center; }
+    .hero h1 { font-size: 1.8rem; }
 }
