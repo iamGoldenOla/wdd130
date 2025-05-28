@@ -87,6 +87,13 @@ header nav a[aria-current="page"] {
 nav, p, section, article {
     margin: 1rem;
     padding: 0.5rem;
+    
+}
+
+/* center the section headings ("About Us", "History", "Adventure Awaits …") */
+
+main h2 {
+    text-align: center;
 }
 
 h1, h2 {
