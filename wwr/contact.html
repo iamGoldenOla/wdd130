@@ -44,64 +44,66 @@
       <p><strong>Email:</strong> info@riverbornwild.com</p>
 
       <div class="map-container">
-        
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15847.945922485662!2d3.421729412107453!3d6.771498874010912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bc1fb8f6014ff%3A0x25a7ce78446bf1a9!2sAsese%20Bus%20Stop!5e0!3m2!1sen!2sng!4v1749332863171!5m2!1sen!2sng" 
-      width="100%" 
-      height="300" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-  </div>
-    </section>
-
-    <section class="team">
-      <h2>Meet Our Team</h2>
-      <div class="team-grid">
-        <figure>
-          <img src="images/Victor (1).webp" alt="Smiling team member - Victor">
-          <figcaption>AKINOLA – Lead Raft Guide</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Simeone.webp" alt="Smiling team member - Simeone">
-          <figcaption>Simeone – Safety Coordinator</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Hannah.webp" alt="Smiling team member - Hannah">
-          <figcaption>Hannah – Guest Experience Manager</figcaption>
-        </figure>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15847.945922485662!2d3.421729412107453!3d6.771498874010912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bc1fb8f6014ff%3A0x25a7ce78446bf1a9!2sAsese%20Bus%20Stop!5e0!3m2!1sen!2sng!4v1749332863171!5m2!1sen!2sng" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </section>
 
-    <section class="contact-form">
-      <h2>Send Us a Message</h2>
-      <form action="#" method="post">
-        <label for="username">Full Name:</label>
-        <input type="text" id="username" name="username" required>
+    <!-- Combined Team + Form Section -->
+    <div class="contact-page-sections">
+      <section class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+          <figure>
+            <img src="images/Victor (1).webp" alt="Smiling team member - Victor">
+            <figcaption>AKINOLA – Lead Raft Guide</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Simeone.webp" alt="Smiling team member - Simeone">
+            <figcaption>Simeone – Safety Coordinator</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Hannah.webp" alt="Smiling team member - Hannah">
+            <figcaption>Hannah – Guest Experience Manager</figcaption>
+          </figure>
+        </div>
+      </section>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
+      <section class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="#" method="post">
+          <label for="username">Full Name:</label>
+          <input type="text" id="username" name="username" required>
 
-        <fieldset>
-          <legend>Purpose of Message:</legend>
-          <label><input type="radio" name="purpose" value="general" required> General Inquiry</label><br>
-          <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label><br>
-          <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
-        </fieldset>
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required>
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+          <fieldset>
+            <legend>Purpose of Message:</legend>
+            <label><input type="radio" name="purpose" value="general" required> General Inquiry</label><br>
+            <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label><br>
+            <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
+          </fieldset>
 
-        <label>
-          <input type="checkbox" name="subscribe">
-          Please subscribe me to the monthly newsletter
-        </label>
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+          <label>
+            <input type="checkbox" name="subscribe">
+            Please subscribe me to the monthly newsletter
+          </label>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -121,5 +123,10 @@
       </a>
     </nav>
   </footer>
+
+  <!-- Footer Script for Dynamic Year -->
+  <script>
+    document.getElementById("2025").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
