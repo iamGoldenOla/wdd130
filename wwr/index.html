@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Riverborn Wild is your gateway to thrilling whitewater rafting adventures. Explore trips, plan your next outdoor experience, and stay safe with our expert guides.">
+  <meta name="author" content="Akinola Olujobi">
+  <title>Riverborn Wild | Home</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="styles/rafting.css">
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img src="images/whitewaterlogo.png" alt="Riverborn Wild logo">
+    </a>
+    <h1 class="site-title">Riverborn Wild</h1>
+    <nav>
+      <ul class="main-menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="trips.html">Trips</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <img src="images/image_hero.webp" alt="Group of rafters navigating a Class-IV rapid">
+      <h1>White Water Rafting Adventures</h1>
+      <p>Thrill meets nature. Discover the adventure of a lifetime.</p>
+      <a href="trips.html" class="cta-button">Explore Trips</a>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <article class="about-intro">
+      <h2>Why Choose Riverborn Wild?</h2>
+      <img src="images/Rafting.webp" alt="Raft on a wild river with smiling team">
+      <p>We’re not just a rafting company—we’re adrenaline guides. With top-tier safety, expert guides, and unforgettable routes, Riverborn Wild brings the adventure right to your paddle.</p>
+    </article>
+
+    <!-- HISTORY GRID -->
+    <section class="history">
+      <h2>Our Story</h2>
+      <div class="history-grid">
+        <p>From quiet rivers to raging rapids, we’ve mastered the art of navigating life and water. Established over a decade ago, our mission has always been to help people experience nature boldly.</p>
+        <img src="images/history.webp" alt="Historic rafting photo from early days">
+        <p>Through challenges, we’ve grown. Through currents, we’ve flowed. Our legacy is built on courage, community, and continuous adventure.</p>
+      </div>
+    </section>
+
+    <!-- GALLERY GRID -->
+    <section class="gallery">
+      <h2>Adventure Awaits You Here at Riverborn Wild</h2>
+      <div class="adventure-grid">
+        <figure>
+          <img src="images/rafting3.webp" alt="Raft team powering through a rapid">
+          <figcaption>Powering through a rapid</figcaption>
+        </figure>
+        <figure>
+          <img src="images/rafting4.webp" alt="Aerial view of river canyon">
+          <figcaption>River canyon from above</figcaption>
+        </figure>
+        <figure>
+          <img src="images/rafting5.webp" alt="Guide giving safety briefing">
+          <figcaption>Safety comes first</figcaption>
+        </figure>
+        <figure>
+          <img src="images/rafting6.webp" alt="Raft hitting a wave">
+          <figcaption>Wave-crashing action</figcaption>
+        </figure>
+        <figure>
+          <img src="images/rafting8.webp" alt="Sunset over whitewater river">
+          <figcaption>Golden hour on the river</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SIGNUP -->
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Join our newsletter for trip updates, discounts, and safety tips.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Riverborn Wild. All rights reserved.</p>
+    <nav class="socialmedia">
+      <a href="https://facebook.com">
+        <img src="images/facebook.webp" alt="Facebook">
+      </a>
+      <a href="https://x.com">
+        <img src="images/x_icon.webp" alt="X/Twitter">
+      </a>
+      <a href="https://instagram.com">
+        <img src="images/instagram_icon.webp" alt="Instagram">
+      </a>
+    </nav>
+  </footer>
+
+  <!-- Script to update year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
