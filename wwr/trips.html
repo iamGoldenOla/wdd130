@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore rafting trip packages, adventures, and experiences with Riverborn Wild.">
+  <meta name="author" content="Akinola Olujobi">
+  <title>Riverborn Wild | Trips</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="styles/rafting.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html">
+      <img src="images/whitewaterlogo.png" alt="Riverborn Wild logo">
+    </a>
+    <h1 class="site-title">Riverborn Wild</h1>
+    <nav>
+      <ul class="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="trips.html" aria-current="page">Trips</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- CTA Section -->
+    <section class="trip-cta">
+      <h2>Ready for an unforgettable adventure?</h2>
+      <p>Discover thrilling rapids, stunning landscapes, and expert-guided journeys. Contact us today to book your spot!</p>
+      <a href="contact.html" class="cta-button">Book Your Trip</a>
+    </section>
+
+    <!-- Trip Descriptions -->
+    <section class="trip-descriptions">
+      <h2>Trip Packages</h2>
+      <div class="trip-grid">
+        <article>
+          <img src="images/trip1.webp" alt="Beginner rafting trip">
+          <h3>Sunshine Rapids (Beginner)</h3>
+          <p>Perfect for families and first-timers, this half-day float takes you through gentle rapids with breathtaking views. Includes snacks and safety gear.</p>
+        </article>
+        <article>
+          <img src="images/trip2.webp" alt="Intermediate rafting trip">
+          <h3>Raging River Run (Intermediate)</h3>
+          <p>A full-day adventure featuring Class III rapids, swimming holes, and a riverside lunch. Best for thrill-seekers ready for some excitement.</p>
+        </article>
+        <article>
+          <img src="images/trip3.webp" alt="Advanced rafting trip">
+          <h3>Thunder Gorge Extreme (Advanced)</h3>
+          <p>Push your limits on this 2-day expedition through Class IV-V rapids. Camp overnight by the river under the stars. Gear, meals, and guide included.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Trip Comparison Table -->
+    <section class="trip-table">
+      <h2>Trip Comparison</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Trip Name</th>
+            <th>Difficulty</th>
+            <th>Duration</th>
+            <th>Age Limit</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sunshine Rapids</td>
+            <td>Easy</td>
+            <td>3 hours</td>
+            <td>5+</td>
+            <td>$50</td>
+          </tr>
+          <tr>
+            <td>Raging River Run</td>
+            <td>Moderate</td>
+            <td>6 hours</td>
+            <td>10+</td>
+            <td>$90</td>
+          </tr>
+          <tr>
+            <td>Thunder Gorge Extreme</td>
+            <td>Hard</td>
+            <td>2 days</td>
+            <td>16+</td>
+            <td>$250</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="2025"></span> Riverborn Wild. All rights reserved.</p>
+    <p><a href="images/trips-wireframe.png" target="_blank">View Trips Page Wireframe</a></p>
+    <nav class="socialmedia">
+      <a href="https://facebook.com">
+        <img src="images/facebook.webp" alt="Facebook">
+      </a>
+      <a href="https://x.com">
+        <img src="images/x_icon.webp" alt="X">
+      </a>
+      <a href="https://instagram.com">
+        <img src="images/instagram_icon.webp" alt="Instagram">
+      </a>
+    </nav>
+  </footer>
+
+  <!-- Dynamic Year Script -->
+  <script>
+    document.getElementById("2025").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
