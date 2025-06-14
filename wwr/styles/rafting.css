@@ -1,128 +1,321 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Riverborn Wild for reservations, inquiries, or support. We're here to help!" />
-  <meta name="author" content="Akinola Olujobi" />
-  <title>Riverborn Wild | Contact Us</title>
+/*Riverborn Wild – Site Styles*/
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+/*‒‒‒Color & Typography Variables‒‒‒*/
+:root {
+    --primary-color:  #191C58;          /* Oxford Blue */
+    --secondary-color:#0451A1;          /* Royal Blue  */
+    --accent1-color:  #FFFFFF;          /* White       */
+    --accent2-color:  #FF8F00;          /* Amber / Orange */
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/rafting.css" />
-</head>
+    --heading-font: "Poppins", sans-serif;
+    --body-font:    "Lato",    sans-serif;
+}
 
-<body>
-  <!-- HEADER -->
-  <header>
-    <a href="index.html">
-      <img src="images/whitewaterlogo.png" alt="Riverborn Wild logo" />
-    </a>
-    <h1 class="site-title">Riverborn Wild</h1>
-    <nav>
-      <ul class="main-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="trips.html">Trips</a></li>
-        <li><a href="contact.html" aria-current="page">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+/*‒‒‒Reset & Base‒‒‒*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section class="contact-info">
-      <h2>Contact Information</h2>
-      <p><strong>Address:</strong> 3, Riverborn Avenue, Aseese Town, Mowe-Ibafo, Nigeria</p>
-      <p><strong>Phone:</strong> +234 (90) 681-338-74</p>
-      <p><strong>Email:</strong> info@riverbornwild.com</p>
+body {
+    font-family: var(--body-font);
+    color: var(--primary-color);
+    background-color: var(--accent1-color);
+    line-height: 1.5;
+}
 
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15847.945922485662!2d3.421729412107453!3d6.771498874010912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bc1fb8f6014ff%3A0x25a7ce78446bf1a9!2sAsese%20Bus%20Stop!5e0!3m2!1sen!2sng!4v1749332863171!5m2!1sen!2sng"
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </section>
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-    <section class="team">
-      <h2>Meet Our Team</h2>
-      <div class="team-grid">
-        <figure>
-          <img src="images/Victor (1).webp" alt="Akinola – Lead Raft Guide" />
-          <figcaption>Akinola – Lead Raft Guide</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Simeone.webp" alt="Simeone – Safety Coordinator" />
-          <figcaption>Simeone – Safety Coordinator</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Hannah.webp" alt="Hannah – Guest Experience Manager" />
-          <figcaption>Hannah – Guest Experience Manager</figcaption>
-        </figure>
-      </div>
-    </section>
+/*HEADER  (Grid layout and Flex nav)*/
+header {
+    background: var(--primary-color);
+    color: var(--accent1-color);
+    display: grid;
+    grid-template-columns: auto 1fr auto;   /* logo,title, nav */
+    align-items: center;
+    gap: 1rem;
+}
 
-    <section class="contact-form">
-      <h2>Send Us a Message</h2>
-      <form action="#" method="post">
-        <label for="username">Full Name:</label>
-        <input type="text" id="username" name="username" required />
+/* logo */
+header img { width: 90px; }
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required />
+/* site title */
+.site-title {
+    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    color: var(--accent1-color);
+    text-align: center;
+}
 
-        <fieldset>
-          <legend>Purpose of Message:</legend>
-          <label><input type="radio" name="purpose" value="general" required /> General Inquiry</label><br />
-          <label><input type="radio" name="purpose" value="reservation" /> Reservation Question</label><br />
-          <label><input type="radio" name="purpose" value="suggestion" /> Website Suggestion</label>
-        </fieldset>
+/* nav list becomes flex row */
+header nav ul.main-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+header nav a {
+    font-family: var(--heading-font);
+    color: var(--accent1-color);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
 
-        <label>
-          <input type="checkbox" name="subscribe" />
-          Please subscribe me to the monthly newsletter
-        </label>
+header nav a:hover,
+header nav a:focus {
+    background: rgba(255, 255, 255, 0.15);
+}
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+/* mark current page */
+header nav a[aria-current="page"] {
+    text-decoration: underline;
+}
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; <span id="copyright-year">2025</span> Riverborn Wild. All rights reserved.</p>
-    <p><a href="images/contact-wireframe.png" target="_blank">View Contact Page Wireframe</a></p>
+/*GLOBAL TYPE / SPACING HELPERS*/
+nav, p, section, article {
+    margin: 1rem;
+    padding: 0.5rem;
+    
+}
 
-    <nav class="socialmedia">
-      <a href="https://facebook.com" target="_blank">
-        <img src="images/facebook.webp" alt="Facebook" />
-      </a>
-      <a href="https://x.com" target="_blank">
-        <img src="images/x_icon.webp" alt="X (Twitter)" />
-      </a>
-      <a href="https://instagram.com" target="_blank">
-        <img src="images/instagram_icon.webp" alt="Instagram" />
-      </a>
-    </nav>
-  </footer>
+/* center the section headings ("About Us", "History", "Adventure Awaits …") */
 
-  <!-- Optional JS to auto-update year -->
-  <script>
-    document.getElementById("copyright-year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+main h2 {
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/*SOCIAL ICONS*/
+.socialmedia a { text-decoration: none; }
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+.socialmedia img:hover { filter: grayscale(0%); }
+
+/*HERO BANNER*/
+.hero { position: relative; }
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem 1rem;
+    font-size: 2.5rem;
+    color: var(--accent1-color);
+    text-shadow: 0 0 6px rgba(0,0,0,.6);
+}
+
+/*ABOUT INTRO (float image)*/
+.about-intro img {
+    float: left;
+    width: 280px;
+    margin: 0 1.25rem 1rem 0;
+}
+.about-intro::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*HISTORY  (three-column grid)*/
+.history {
+    background: #f8f9ff;
+    border: 1px solid #ccc;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.history-grid img {
+    width: 100%;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+/*ADVENTURE GALLERY (auto-fit grid)*/
+.gallery { border: 1px solid #ccc; }
+
+.adventure-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.adventure-grid figure { text-align: center; }
+
+.adventure-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+}
+.adventure-grid figcaption {
+    margin-top: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--primary-color);
+}
+
+/*FOOTER (Flex layout)*/
+footer {
+    background: var(--primary-color);
+    color: var(--accent1-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+footer p { margin: 0; }
+
+/*RESPONSIVE TWEAKS*/
+@media (max-width: 600px) {
+    header { grid-template-columns: 1fr; text-align: center; }
+    .site-title { margin-bottom: 0.25rem; }
+    header nav ul.main-menu { justify-content: center; flex-wrap: wrap; }
+    .hero h1 { font-size: 1.8rem; }
+}
+
+/* optional gap between header and hero */
+header {                /* option A */
+    margin-bottom: 1.25rem;   /* tweak value to taste */
+}
+
+/* CONTACT PAGE STYLES */
+.contact-info {
+    background-color: #f2f6fc;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.map-container {
+    margin-top: 1rem;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.team {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.team-grid img {
+    width: 100%;
+    max-width: 200px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.team-grid figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.contact-form {
+    background-color: #f8f9ff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    width: 100%;
+}
+
+.contact-form fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.75rem;
+}
+
+.contact-form legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.contact-form input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.contact-form button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--primary-color);
+}
